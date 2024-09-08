@@ -1,5 +1,12 @@
-# Go Starter
+# go-microservices
 
-Here you can easily get started with [Go](https://go.dev/) and experiment. Make sure to Fork this template by clicking the button in the top right corner!
+## Front End
 
-Check [the Dockerfile](./.devcontainer/Dockerfile) to see how we configure the container of this sandbox. You can simply edit it yourself and the container will rebuild. Make sure to fork the sandbox first by clicking "Fork" in the top left corner.
+- Navigate to front end service main go path
+  - `cd frontEnd/src/web`
+- Run the front end app
+  - `go run main.go`
+
+NOTE: Only if its first time (downloads the source code of the packages used and its dependencies within your workspace)
+
+- `go install .src/web` or `go get .src/web`
