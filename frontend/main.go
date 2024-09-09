@@ -17,7 +17,7 @@ func main() {
 }
 
 func ShowBooks(w http.ResponseWriter, r *http.Request) {
-	book := Book{"Building Web Apps with Go", "Jeremy Saenz"}
+	book := Book{"Building Web Apps with Go", "Prasan"}
 
 	fp := path.Join("templates", "index.html")
 	tmpl, err := template.ParseFiles(fp)
