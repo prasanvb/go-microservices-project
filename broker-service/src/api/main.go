@@ -1,17 +1,29 @@
 package main
 
 import (
+	"fmt"
+	"log"
 	"net/http"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
 )
 
+const webPort = "3600"
+
+type Config struct {
+}
+
 func main() {
-	r := chi.NewRouter()
-	r.Use(middleware.Logger)
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Welcome to Go Chi"))
-	})
-	http.ListenAndServe(":3600", r)
+	app := Config{}
+
+	log.Printf("Starting the broker service on port %s\n", webPort)
+
+	// this implementation allows Multiplexing Request Handlers
+	srv := &http.Server{
+		Addr:    fmt.Sprintf(":%s", webPort),
+		Handler: app.routes(),
+	}
+
+	err := srv.ListenAndServe()
+	if err != nil {
+		log.Panic("broker service server error", err)
+	}
 }
