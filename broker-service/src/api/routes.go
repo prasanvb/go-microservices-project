@@ -13,7 +13,7 @@ func (app *Config) routes() http.Handler {
 	r := chi.NewRouter()
 
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"http:\\*", "https:\\*"},
+		AllowedOrigins:   []string{"*"}, // NOTE: allow all hosts
 		AllowedMethods:   []string{"POST", "GET", "DELETE", "PATCH", "OPTIONS", "PUT"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "x-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
@@ -24,6 +24,8 @@ func (app *Config) routes() http.Handler {
 	r.Use(middleware.Heartbeat("/ping"))
 
 	r.Post("/", app.Broker)
+
+	r.Get("/", app.Root)
 
 	return r
 

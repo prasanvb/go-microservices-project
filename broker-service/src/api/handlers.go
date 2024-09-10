@@ -38,3 +38,7 @@ func (app *Config) Broker(w http.ResponseWriter, r *http.Request) {
 	w.Write(out)
 
 }
+
+func (app *Config) Root(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Welcome from broker service"))
+}
