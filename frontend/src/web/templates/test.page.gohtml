@@ -6,7 +6,11 @@
             <div class="col">
                 <h1 class="mt-5">GO microservices</h1>
                 <hr>
-                <a id="brokerBtn" class="btn btn-outline-secondary" href="javascript:void(0);">Test Broker</a>
+                <div class="flex justify-between">
+                    <a id="clearBtn" class="btn btn-outline-secondary" href="javascript:void(0);">Clear</a>
+                    <a id="brokerBtn" class="btn btn-outline-secondary" href="javascript:void(0);">Test Broker</a>
+                </div>
+
 
                 <div id="output" class="mt-5" style="outline: 1px solid silver; padding: 2em;">
                     <span class="text-muted">Output shows here...</span>
@@ -36,6 +40,13 @@
         let output = document.getElementById("output");
         let sent = document.getElementById("payload");
         let recevied = document.getElementById("received");
+        let clear = document.getElementById("clearBtn");
+
+        clear.addEventListener("click", function() {
+            output.innerHTML = "";
+            sent.innerHTML = "";
+            received.innerHTML = "";
+        })
 
         brokerBtn.addEventListener("click", function() {
 
