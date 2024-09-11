@@ -21,16 +21,18 @@ func main() {
 
 func render(w http.ResponseWriter, t string) {
 
+	// NOTE: code sandbox
 	// full path: /project/workspace/frontend/src/web/templates
+	// sample path: ./templates/base.layout.gohtml
 
 	partials := []string{
-		"./templates/base.layout.gohtml",
-		"./templates/header.partial.gohtml",
-		"./templates/footer.partial.gohtml",
+		"frontend/src/web/templates/base.layout.gohtml",
+		"frontend/src/web/templates/header.partial.gohtml",
+		"frontend/src/web/templates/footer.partial.gohtml",
 	}
 
 	var templateSlice []string
-	templateSlice = append(templateSlice, fmt.Sprintf("./templates/%s", t))
+	templateSlice = append(templateSlice, fmt.Sprintf("frontend/src/web/templates/%s", t))
 
 	for _, x := range partials {
 		templateSlice = append(templateSlice, x)

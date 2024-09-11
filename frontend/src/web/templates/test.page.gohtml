@@ -56,7 +56,8 @@
 
             // NOTE: 
             // "http:\/\/0.0.0.0:3600" - localhost broker-service url
-            fetch("https://zjwkd4-3600.csb.app/", body)
+            // "https://zjwkd4-3600.csb.app/"  - codesandbox url
+            fetch("http:\/\/0.0.0.0:3600", body)
             .then((response) => response.json())
             .then((data) => {
                 sent.innerHTML ="empty post request";
