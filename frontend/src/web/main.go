@@ -21,10 +21,6 @@ func main() {
 
 func render(w http.ResponseWriter, t string) {
 
-	// NOTE: code sandbox
-	// full path: /project/workspace/frontend/src/web/templates
-	// sample path: ./templates/base.layout.gohtml
-
 	partials := []string{
 		"frontend/src/web/templates/base.layout.gohtml",
 		"frontend/src/web/templates/header.partial.gohtml",
