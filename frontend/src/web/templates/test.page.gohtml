@@ -54,7 +54,8 @@
                 method: 'POST',
             }
 
-            // NOTE: "http:\/\/localhost:8080"
+            // NOTE: 
+            // "http:\/\/0.0.0.0:3600" - localhost broker-service url
             fetch("https://zjwkd4-3600.csb.app/", body)
             .then((response) => response.json())
             .then((data) => {
