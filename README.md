@@ -2,12 +2,14 @@
 
 ## Frontend
 
-- Run the frontend app from workspace folder
-  - `go run frontend/src/web/main.go`
+- Navigate to Broker service
+  - `cd frontend`
+- Run the frontend app
+  - `go run ./src/web/main.go`
 
 ## Broker service
 
 - Navigate to Broker service
-  - `cd brokerService/src/api`
+  - `cd broker-service`
 - Run the broker service
-  - `go run main.go routes.go handlers.go`
+  - `go run .src/api/main.go .src/api/routes.go .src/api/handlers.go`
